@@ -3,38 +3,23 @@
   "groupName": "Tittentreff",
   "edition": "EXPEDITION MALTA 2026",
   "title": "Malta Audio Experience",
-  "subtitle": "Historische Rekonstruktion einer Reisegruppe, deren Entscheidungen bis heute nicht vollstaendig geklaert werden konnten.",
-  "instruction": "Kopfhoerer anschliessen, Hopfenkaltschale sichern und Tracks nur auf Anweisung der Reiseleitung oeffnen.",
+  "subtitle": "Historische Rekonstruktion einer Reisegruppe, deren Entscheidungen bis heute nicht vollständig geklärt werden konnten.",
+  "instruction": "Kopfhörer anschließen, Hopfenkaltschale sichern und Tracks nur auf Anweisung der Reiseleitung öffnen.",
   "stations": [
     {
       "id": 1,
       "title": "Ankunft und Kalibrierung",
-      "description": "Begruessung, technische Funktionspruefung und offizieller Beginn der Forschung."
+      "description": "Begrüßung, technische Funktionsprüfung und offizieller Beginn der Expedition."
     },
     {
       "id": 2,
-      "title": "Erste historische Funde",
-      "description": "Erste Fallakten zwischen Gassen, Plaetzen und dem unvermeidbaren ersten Barstopp."
+      "title": "Frühe Fallakten",
+      "description": "Naturbeobachtung, Sportgeschichte und urbane Feldforschung – wissenschaftlich ähnlich belastbar."
     },
     {
       "id": 3,
-      "title": "Religioese Irrwege",
-      "description": "Kirchen, Gewissen und mehrere wissenschaftlich schwer erklaerbare Entscheidungen."
-    },
-    {
-      "id": 4,
-      "title": "Hopfenwissenschaft",
-      "description": "Vertiefende Feldforschung an Einrichtungen mit besonderer getraenkekultureller Bedeutung."
-    },
-    {
-      "id": 5,
-      "title": "Spaete Jugendforschung",
-      "description": "Weitere Augenzeugenberichte aus Partyzeiten, Jugendjahren und ungeplanten Heimwegen."
-    },
-    {
-      "id": 6,
-      "title": "Abschlussbericht",
-      "description": "Letzte Fallakten und vorlaeufige Bewertung der Expedition."
+      "title": "Nachtökonomie",
+      "description": "Angebot, Nachfrage und weitere Entscheidungen, die erst am folgenden Morgen vollständig bewertet werden konnten."
     }
   ]
 }
