@@ -1,35 +1,35 @@
 [
   {
     "id": "intro",
-    "order": 1,
+    "order": 0,
     "stationId": 1,
-    "label": "EROEFFNUNGSPROTOKOLL",
+    "label": "TRACK 0 · EROEFFNUNGSPROTOKOLL",
     "title": "Beginn der Expedition",
     "subtitle": "Willkommen bei der TT Malta Audio Experience",
-    "description": "Platzhalter: Hier den finalen Intro-Text und spaeter die Intro-MP3 eintragen.",
-    "audio": "audio/dummy.mp3",
-    "duration": "00:01",
+    "description": "Offizielle Eroeffnung der Expedition, technische Kalibrierung und gemeinsamer Beginn der historischen Feldforschung.",
+    "audio": "audio/Track0-Intro.mp3",
+    "duration": "ca. 01:30",
     "era": "Malta 2026",
     "sources": "13 Teilnehmer",
-    "status": "Vorlaeufig rekonstruiert"
+    "status": "Final vertont"
   },
   {
-    "id": "story-01",
-    "order": 2,
+    "id": "laugen",
+    "order": 1,
     "stationId": 2,
-    "label": "FALLAKTE 01",
-    "title": "Archivakte 01 - Titel ergaenzen",
-    "subtitle": "Name des Teilnehmers bleibt bis zur Audio-Enthuellung verborgen",
-    "description": "Platzhalter fuer Geschichte 1: Stichpunkte, Pointe und Bezug zum aktuellen Ort ergaenzen. Danach die passende MP3 im Audio-Ordner hinterlegen.",
-    "audio": "audio/dummy.mp3",
-    "duration": "00:01",
-    "era": "Jugend- und Partyjahre",
-    "sources": "Mehrere Augenzeugen",
-    "status": "Beunruhigend glaubwuerdig"
+    "label": "FALLAKTE · NATURBEOBACHTUNG",
+    "title": "Der ungeklärte Vorfall am Laugen",
+    "subtitle": "Ein bislang nicht klassifiziertes Balzverhalten",
+    "description": "Ein erfahrener Jaeger vernimmt kurz vor Sonnenaufgang unbekannte Brunftrufe aus seinem Hochstand. Die verursachende Spezies konnte bis heute nicht zweifelsfrei bestimmt werden.",
+    "audio": "audio/Track1-Der-ungeklaerte-Vorfall-am-Laugen.mp3",
+    "duration": "ca. 01:30",
+    "era": "Sommer, kurz vor 05:00 Uhr",
+    "sources": "Ein eingeschuechterter Jaeger",
+    "status": "Bis heute ungeklärt"
   },
   {
     "id": "story-02",
-    "order": 3,
+    "order": 2,
     "stationId": 2,
     "label": "FALLAKTE 02",
     "title": "Archivakte 02 - Titel ergaenzen",
@@ -43,7 +43,7 @@
   },
   {
     "id": "story-03",
-    "order": 4,
+    "order": 3,
     "stationId": 2,
     "label": "FALLAKTE 03",
     "title": "Archivakte 03 - Titel ergaenzen",
@@ -57,7 +57,7 @@
   },
   {
     "id": "story-04",
-    "order": 5,
+    "order": 4,
     "stationId": 3,
     "label": "FALLAKTE 04",
     "title": "Archivakte 04 - Titel ergaenzen",
@@ -71,7 +71,7 @@
   },
   {
     "id": "story-05",
-    "order": 6,
+    "order": 5,
     "stationId": 3,
     "label": "FALLAKTE 05",
     "title": "Archivakte 05 - Titel ergaenzen",
@@ -85,7 +85,7 @@
   },
   {
     "id": "story-06",
-    "order": 7,
+    "order": 6,
     "stationId": 3,
     "label": "FALLAKTE 06",
     "title": "Archivakte 06 - Titel ergaenzen",
@@ -99,7 +99,7 @@
   },
   {
     "id": "story-07",
-    "order": 8,
+    "order": 7,
     "stationId": 4,
     "label": "FALLAKTE 07",
     "title": "Archivakte 07 - Titel ergaenzen",
@@ -113,7 +113,7 @@
   },
   {
     "id": "story-08",
-    "order": 9,
+    "order": 8,
     "stationId": 4,
     "label": "FALLAKTE 08",
     "title": "Archivakte 08 - Titel ergaenzen",
@@ -127,7 +127,7 @@
   },
   {
     "id": "story-09",
-    "order": 10,
+    "order": 9,
     "stationId": 4,
     "label": "FALLAKTE 09",
     "title": "Archivakte 09 - Titel ergaenzen",
@@ -141,7 +141,7 @@
   },
   {
     "id": "story-10",
-    "order": 11,
+    "order": 10,
     "stationId": 5,
     "label": "FALLAKTE 10",
     "title": "Archivakte 10 - Titel ergaenzen",
@@ -155,7 +155,7 @@
   },
   {
     "id": "story-11",
-    "order": 12,
+    "order": 11,
     "stationId": 5,
     "label": "FALLAKTE 11",
     "title": "Archivakte 11 - Titel ergaenzen",
@@ -169,7 +169,7 @@
   },
   {
     "id": "story-12",
-    "order": 13,
+    "order": 12,
     "stationId": 5,
     "label": "FALLAKTE 12",
     "title": "Archivakte 12 - Titel ergaenzen",
@@ -183,7 +183,7 @@
   },
   {
     "id": "story-13",
-    "order": 14,
+    "order": 13,
     "stationId": 6,
     "label": "FALLAKTE 13",
     "title": "Archivakte 13 - Titel ergaenzen",
@@ -197,7 +197,7 @@
   },
   {
     "id": "finale",
-    "order": 15,
+    "order": 14,
     "stationId": 6,
     "label": "ABSCHLUSSPROTOKOLL",
     "title": "Vorlaeufiger Expeditionsbericht",
