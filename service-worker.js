@@ -1,4 +1,4 @@
-const CACHE_NAME = "tt-malta-v1";
+const CACHE_NAME = "tt-malta-v3";
 const APP_SHELL = [
   "./",
   "index.html",
