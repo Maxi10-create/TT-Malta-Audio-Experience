@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17130f">
+  <meta name="description" content="Mobiler Audio Guide der TT Malta Expedition">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>TT Malta Audio Experience</title>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero__topline">
+      <span class="group-badge" id="groupBadge">TT &middot; Tittentreff</span>
+      <button class="icon-button" id="shareButton" type="button" aria-label="Seite teilen" title="Seite teilen">
+        <span aria-hidden="true">&#8599;</span>
+      </button>
+    </div>
+
+    <p class="eyebrow" id="editionLabel">EXPEDITION MALTA 2026</p>
+    <h1 id="siteTitle">Malta Audio Experience</h1>
+    <p class="hero__text" id="siteSubtitle">
+      Historische Rekonstruktion einer Reisegruppe, deren Entscheidungen bis heute nicht vollstaendig geklaert werden konnten.
+    </p>
+
+    <div class="progress-card" aria-live="polite">
+      <div>
+        <span class="progress-card__label">Forschungsstand</span>
+        <strong id="progressText">0 von 15 Fundstuecken aufgearbeitet</strong>
+      </div>
+      <span class="progress-card__percent" id="progressPercent">0 %</span>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="hero__actions">
+      <a class="button button--primary" href="#tracks">Expedition starten</a>
+      <a class="button button--ghost" href="qr.html">QR-Code anzeigen</a>
+    </div>
+  </header>
+
+  <main id="tracks" class="content">
+    <section class="notice" aria-label="Hinweis">
+      <span class="notice__stamp">ANWEISUNG</span>
+      <p id="guideInstruction">
+        Kopfhoerer anschliessen, Hopfenkaltschale sichern und Tracks nur auf Anweisung der Reiseleitung oeffnen.
+      </p>
+    </section>
+
+    <div class="toolbar">
+      <div>
+        <p class="toolbar__title">Archiv der Expedition</p>
+        <p class="toolbar__subtitle">Intro, 13 Fallakten und Abschlussbericht</p>
+      </div>
+      <button id="resetButton" class="text-button" type="button">Fortschritt zuruecksetzen</button>
+    </div>
+
+    <div id="stationsContainer" class="stations" aria-live="polite">
+      <div class="loading">Archiv wird geladen...</div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p><strong id="footerGroup">TT &middot; Tittentreff</strong> &middot; Malta Expedition</p>
+    <p class="footer__small">Alle Aussagen beruhen auf Augenzeugenberichten. Die Betroffenen erinnern sich teilweise anders.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

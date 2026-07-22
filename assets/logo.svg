@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" role="img" aria-labelledby="title desc">
+  <title id="title">TT Malta Audio Experience</title>
+  <desc id="desc">Archiv-Logo der Gruppe TT Tittentreff</desc>
+  <rect width="800" height="260" rx="32" fill="#17130f"/>
+  <rect x="18" y="18" width="764" height="224" rx="24" fill="none" stroke="#d2ad68" stroke-width="3"/>
+  <text x="400" y="116" text-anchor="middle" fill="#f0cc84" font-size="92" font-family="Georgia, serif">TT</text>
+  <text x="400" y="165" text-anchor="middle" fill="#f4ead9" font-size="28" font-family="Arial, sans-serif" letter-spacing="5">TITTENTREFF</text>
+  <text x="400" y="207" text-anchor="middle" fill="#b9aa95" font-size="20" font-family="Arial, sans-serif" letter-spacing="4">MALTA EXPEDITION 2026</text>
+</svg>
