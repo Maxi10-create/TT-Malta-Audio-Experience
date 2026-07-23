@@ -24,13 +24,13 @@
     <p class="eyebrow" id="editionLabel">EXPEDITION MALTA 2026</p>
     <h1 id="siteTitle">Malta Audio Experience</h1>
     <p class="hero__text" id="siteSubtitle">
-      Historische Rekonstruktion einer Reisegruppe, deren Entscheidungen bis heute nicht vollstaendig geklaert werden konnten.
+      Historische Rekonstruktion einer Reisegruppe, deren Entscheidungen bis heute nicht vollständig geklärt werden konnten.
     </p>
 
     <div class="progress-card" aria-live="polite">
       <div>
         <span class="progress-card__label">Forschungsstand</span>
-        <strong id="progressText">0 von 15 Fundstuecken aufgearbeitet</strong>
+        <strong id="progressText">0 von 7 verfügbaren Fundstücken aufgearbeitet</strong>
       </div>
       <span class="progress-card__percent" id="progressPercent">0 %</span>
       <div class="progress-track" aria-hidden="true">
@@ -40,24 +40,43 @@
 
     <div class="hero__actions">
       <a class="button button--primary" href="#tracks">Expedition starten</a>
+      <a class="button button--ghost" href="#route">Route ansehen</a>
       <a class="button button--ghost" href="qr.html">QR-Code anzeigen</a>
     </div>
   </header>
 
-  <main id="tracks" class="content">
+  <main class="content">
     <section class="notice" aria-label="Hinweis">
       <span class="notice__stamp">ANWEISUNG</span>
       <p id="guideInstruction">
-        Kopfhoerer anschliessen, Hopfenkaltschale sichern und Tracks nur auf Anweisung der Reiseleitung oeffnen.
+        Kopfhörer anschließen, Hopfenkaltschale sichern und Tracks nur auf Anweisung der Reiseleitung öffnen.
       </p>
     </section>
 
-    <div class="toolbar">
+    <section id="route" class="route-card" aria-labelledby="routeTitle">
+      <div class="route-card__header">
+        <div>
+          <p class="station__kicker">ROUTENAKTE · VALLETTA</p>
+          <h2 id="routeTitle" class="route-card__title">Expedition. Kultur. Bier.</h2>
+          <p class="route-card__text">Die geplante Route verbindet die Audio-Stationen mit Sehenswürdigkeiten, Versorgungsstopps und einem wissenschaftlich angemessenen Abschluss.</p>
+        </div>
+        <span class="route-card__stamp">12 JÜNGER · 1 MISSION</span>
+      </div>
+      <a class="route-card__image-link" href="assets/tt-valletta-route.jpg" target="_blank" rel="noopener" aria-label="Routenkarte in voller Größe öffnen">
+        <img class="route-card__image" src="assets/tt-valletta-route.jpg" alt="Illustrierte TT-Route durch Valletta mit Audio-Stopps und Bars" loading="lazy">
+      </a>
+      <div class="route-card__actions">
+        <a class="button button--primary" href="https://www.google.com/maps/dir/?api=1&origin=Triton+Fountain%2C+Valletta%2C+Malta&destination=Lower+Barrakka+Gardens%2C+Valletta%2C+Malta&travelmode=walking&waypoints=Upper+Barrakka+Gardens%2C+Valletta%2C+Malta%7CSt+John%27s+Co-Cathedral%2C+Valletta%2C+Malta%7CCaffe+Cordina%2C+Valletta%2C+Malta%7CSt+George%27s+Square%2C+Valletta%2C+Malta%7CSt+Lucia+Street%2C+Valletta%2C+Malta%7CCafe+Society%2C+Valletta%2C+Malta%7CStrait+Street%2C+Valletta%2C+Malta%7CTico+Tico%2C+Valletta%2C+Malta" target="_blank" rel="noopener">Google Maps öffnen</a>
+        <a class="button button--ghost" href="assets/tt-valletta-route.jpg" target="_blank" rel="noopener">Karte vergrößern</a>
+      </div>
+    </section>
+
+    <div id="tracks" class="toolbar">
       <div>
         <p class="toolbar__title">Archiv der Expedition</p>
-        <p class="toolbar__subtitle">Intro, 13 Fallakten und Abschlussbericht</p>
+        <p class="toolbar__subtitle">Track 0 bis Track 13 · sieben Akten verfügbar, sieben noch versiegelt</p>
       </div>
-      <button id="resetButton" class="text-button" type="button">Fortschritt zuruecksetzen</button>
+      <button id="resetButton" class="text-button" type="button">Fortschritt zurücksetzen</button>
     </div>
 
     <div id="stationsContainer" class="stations" aria-live="polite">
