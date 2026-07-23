@@ -1,4 +1,4 @@
-const CACHE_NAME = "tt-malta-v3";
+const CACHE_NAME = "tt-malta-v4";
 const APP_SHELL = [
   "./",
   "index.html",
@@ -11,7 +11,8 @@ const APP_SHELL = [
   "assets/logo.svg",
   "assets/icon-192.png",
   "assets/icon-512.png",
-  "assets/qr-placeholder.png",
+  "assets/qr-tt-audio-guide.png",
+  "assets/tt-valletta-route.jpg",
   "audio/dummy.mp3"
 ];
 
@@ -22,7 +23,11 @@ self.addEventListener("install", event => {
     try {
       const response = await fetch("tracks.json", { cache: "no-store" });
       const tracks = await response.json();
-      const audioFiles = [...new Set(tracks.map(track => track.audio).filter(Boolean))];
+      const audioFiles = [...new Set(
+        tracks
+          .filter(track => track.available !== false && track.audio)
+          .map(track => track.audio)
+      )];
       await cache.addAll(audioFiles);
     } catch (error) {
       console.warn("Audio pre-cache was not completed", error);
