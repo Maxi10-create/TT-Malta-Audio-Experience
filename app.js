@@ -33,15 +33,20 @@ function formatTime(seconds) {
   return `${minutes}:${remainder}`;
 }
 
+function isAvailable(track) {
+  return track.available !== false && Boolean(track.audio);
+}
+
 function persistCompleted() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.completed]));
 }
 
 function updateProgress() {
-  const total = state.tracks.length || 15;
-  const completed = state.tracks.filter(track => state.completed.has(track.id)).length;
-  const percentage = Math.round((completed / total) * 100);
-  els.progressText.textContent = `${completed} von ${total} Fundstuecken aufgearbeitet`;
+  const availableTracks = state.tracks.filter(isAvailable);
+  const total = availableTracks.length;
+  const completed = availableTracks.filter(track => state.completed.has(track.id)).length;
+  const percentage = total ? Math.round((completed / total) * 100) : 0;
+  els.progressText.textContent = `${completed} von ${total} verfügbaren Fundstücken aufgearbeitet`;
   els.progressPercent.textContent = `${percentage} %`;
   els.progressFill.style.width = `${percentage}%`;
 }
@@ -57,9 +62,10 @@ function applyConfig(config) {
 }
 
 function trackTemplate(track) {
-  const isComplete = state.completed.has(track.id);
+  const available = isAvailable(track);
+  const isComplete = available && state.completed.has(track.id);
   return `
-    <article class="track-card ${isComplete ? "is-complete" : ""}" data-track-id="${track.id}">
+    <article class="track-card ${isComplete ? "is-complete" : ""} ${available ? "" : "is-placeholder"}" data-track-id="${track.id}">
       <div class="track-card__top">
         <div class="track-card__number">${String(track.order).padStart(2, "0")}</div>
         <div>
@@ -78,16 +84,21 @@ function trackTemplate(track) {
         <span class="meta-chip">STATUS: ${track.status}</span>
       </div>
 
-      <div class="player-row">
-        <button class="play-button" type="button" data-action="toggle" aria-label="Track abspielen">&#9654;</button>
-        <input class="track-progress" data-action="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Wiedergabeposition">
-        <span class="time-display">0:00</span>
-      </div>
-
-      <div class="complete-row">
-        ${isComplete ? '<span class="status-badge">HISTORISCH AUFGEARBEITET</span>' : ""}
-      </div>
-      <audio preload="metadata" src="${track.audio}"></audio>
+      ${available ? `
+        <div class="player-row">
+          <button class="play-button" type="button" data-action="toggle" aria-label="Track abspielen">&#9654;</button>
+          <input class="track-progress" data-action="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Wiedergabeposition">
+          <span class="time-display">0:00</span>
+        </div>
+        <div class="complete-row">
+          ${isComplete ? '<span class="status-badge">HISTORISCH AUFGEARBEITET</span>' : ""}
+        </div>
+        <audio preload="metadata" src="${track.audio}"></audio>
+      ` : `
+        <div class="placeholder-row">
+          <span class="placeholder-badge">ARCHIV NOCH VERSIEGELT</span>
+        </div>
+      `}
     </article>
   `;
 }
@@ -100,7 +111,14 @@ function renderTracks() {
   });
 
   els.stations.innerHTML = [...grouped.entries()].map(([stationId, tracks]) => {
-    const station = state.config.stations.find(item => item.id === stationId);
+    const station = state.config.stations.find(item => item.id === stationId) || {
+      title: `Station ${stationId}`,
+      description: "Weitere Akten der Expedition."
+    };
+    const availableCount = tracks.filter(isAvailable).length;
+    const playLabel = availableCount
+      ? `Alle ${availableCount} verfügbaren Tracks starten`
+      : "Archiv noch versiegelt";
     return `
       <section class="station" data-station-id="${stationId}">
         <header class="station__header">
@@ -109,7 +127,7 @@ function renderTracks() {
             <h2 class="station__title">${station.title}</h2>
             <p class="station__description">${station.description}</p>
           </div>
-          <button class="station__play" type="button" data-action="play-station">Alle ${tracks.length} Tracks starten</button>
+          <button class="station__play" type="button" data-action="play-station" ${availableCount ? "" : "disabled"}>${playLabel}</button>
         </header>
         <div class="track-list">${tracks.map(trackTemplate).join("")}</div>
       </section>
@@ -121,8 +139,10 @@ function renderTracks() {
 }
 
 function setPlayingUi(card, playing) {
+  if (!card) return;
   card.classList.toggle("is-playing", playing);
   const button = card.querySelector('[data-action="toggle"]');
+  if (!button) return;
   button.innerHTML = playing ? "&#10074;&#10074;" : "&#9654;";
   button.setAttribute("aria-label", playing ? "Track pausieren" : "Track abspielen");
 }
@@ -140,7 +160,8 @@ function markComplete(trackId, card) {
   state.completed.add(trackId);
   persistCompleted();
   card.classList.add("is-complete");
-  card.querySelector(".complete-row").innerHTML = '<span class="status-badge">HISTORISCH AUFGEARBEITET</span>';
+  const row = card.querySelector(".complete-row");
+  if (row) row.innerHTML = '<span class="status-badge">HISTORISCH AUFGEARBEITET</span>';
   updateProgress();
 }
 
@@ -148,6 +169,7 @@ function playTrackById(trackId) {
   const card = document.querySelector(`[data-track-id="${trackId}"]`);
   if (!card) return;
   const audio = card.querySelector("audio");
+  if (!audio) return;
 
   if (state.currentAudio && state.currentAudio !== audio) stopCurrentAudio();
 
@@ -160,9 +182,9 @@ function playTrackById(trackId) {
 }
 
 function bindPlayers() {
-  document.querySelectorAll(".track-card").forEach(card => {
+  document.querySelectorAll(".track-card audio").forEach(audio => {
+    const card = audio.closest(".track-card");
     const trackId = card.dataset.trackId;
-    const audio = card.querySelector("audio");
     const button = card.querySelector('[data-action="toggle"]');
     const seek = card.querySelector('[data-action="seek"]');
     const timeDisplay = card.querySelector(".time-display");
@@ -195,10 +217,13 @@ function bindPlayers() {
     });
   });
 
-  document.querySelectorAll('[data-action="play-station"]').forEach(button => {
+  document.querySelectorAll('[data-action="play-station"]:not(:disabled)').forEach(button => {
     button.addEventListener("click", () => {
       const station = button.closest(".station");
-      const ids = [...station.querySelectorAll(".track-card")].map(card => card.dataset.trackId);
+      const ids = [...station.querySelectorAll(".track-card")]
+        .filter(card => card.querySelector("audio"))
+        .map(card => card.dataset.trackId);
+      if (!ids.length) return;
       state.stationQueue = ids.slice(1);
       playTrackById(ids[0]);
     });
@@ -206,12 +231,12 @@ function bindPlayers() {
 }
 
 els.resetButton.addEventListener("click", () => {
-  if (!window.confirm("Den lokalen Fortschritt auf diesem Geraet wirklich zuruecksetzen?")) return;
+  if (!window.confirm("Den lokalen Fortschritt auf diesem Gerät wirklich zurücksetzen?")) return;
   stopCurrentAudio();
   state.completed.clear();
   persistCompleted();
   renderTracks();
-  showToast("Forschungsstand wurde zurueckgesetzt.");
+  showToast("Forschungsstand wurde zurückgesetzt.");
 });
 
 els.shareButton.addEventListener("click", async () => {
@@ -227,7 +252,7 @@ els.shareButton.addEventListener("click", async () => {
       showToast("Link wurde kopiert.");
     } else showToast(window.location.href);
   } catch (error) {
-    if (error.name !== "AbortError") showToast("Teilen war nicht moeglich.");
+    if (error.name !== "AbortError") showToast("Teilen war nicht möglich.");
   }
 });
 
@@ -239,14 +264,14 @@ async function init() {
     ]);
     if (!configResponse.ok || !tracksResponse.ok) throw new Error("Dateien konnten nicht geladen werden.");
     state.config = await configResponse.json();
-    state.tracks = await tracksResponse.json();
+    state.tracks = (await tracksResponse.json()).sort((a, b) => a.order - b.order);
     applyConfig(state.config);
     renderTracks();
   } catch (error) {
     els.stations.innerHTML = `
       <div class="error-box">
         <strong>Das Archiv konnte nicht geladen werden.</strong><br>
-        Bitte die Seite ueber GitHub Pages oder einen lokalen Webserver oeffnen, nicht direkt als Datei.
+        Bitte die Seite über GitHub Pages oder einen lokalen Webserver öffnen, nicht direkt als Datei.
       </div>`;
     console.error(error);
   }
