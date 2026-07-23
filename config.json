@@ -18,8 +18,23 @@
     },
     {
       "id": 3,
-      "title": "Nachtökonomie",
-      "description": "Angebot, Nachfrage und weitere Entscheidungen, die erst am folgenden Morgen vollständig bewertet werden konnten."
+      "title": "Wahrnehmung und Nachtökonomie",
+      "description": "Ökonomische Feldversuche und psychologische Deutungen bei überschaubarer Datenqualität."
+    },
+    {
+      "id": 4,
+      "title": "Versiegelte Akten I",
+      "description": "Weitere Vorfälle befinden sich noch in der fachlichen Rekonstruktion."
+    },
+    {
+      "id": 5,
+      "title": "Versiegelte Akten II",
+      "description": "Die Freigabe zusätzlicher Augenzeugenberichte steht noch aus."
+    },
+    {
+      "id": 6,
+      "title": "Schlussakte",
+      "description": "Die Expedition endet mit einer letzten zoologischen Fallstudie."
     }
   ]
 }
