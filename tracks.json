@@ -11,7 +11,8 @@
     "duration": "ca. 01:30",
     "era": "Malta 2026",
     "sources": "13 weitgehend glaubwürdige Teilnehmer",
-    "status": "Expedition freigegeben"
+    "status": "Expedition freigegeben",
+    "available": true
   },
   {
     "id": "laugen",
@@ -25,7 +26,8 @@
     "duration": "ca. 01:30",
     "era": "Sommer, kurz vor 05:00 Uhr",
     "sources": "Ein nachhaltig eingeschüchterter Jäger",
-    "status": "Zoologisch ungeklärt"
+    "status": "Zoologisch ungeklärt",
+    "available": true
   },
   {
     "id": "miro-klose",
@@ -39,7 +41,8 @@
     "duration": "ca. 01:30",
     "era": "Die frühen Leistungsjahre",
     "sources": "Lückenhafte Spielberichte und mündliche Überlieferung",
-    "status": "Karriereverlauf nicht abschließend erklärbar"
+    "status": "Karriereverlauf nicht abschließend erklärbar",
+    "available": true
   },
   {
     "id": "lissabon",
@@ -53,7 +56,8 @@
     "duration": "ca. 01:30",
     "era": "Lissabonner Nachtforschung",
     "sources": "Zwei unvereinbare Augenzeugenberichte",
-    "status": "Wahrnehmungsfrage weiterhin umstritten"
+    "status": "Wahrnehmungsfrage weiterhin umstritten",
+    "available": true
   },
   {
     "id": "aeltestes-gewerbe",
@@ -67,6 +71,142 @@
     "duration": "ca. 01:30",
     "era": "Frühe marktwirtschaftliche Feldversuche",
     "sources": "Beteiligte mit selektivem Erinnerungsvermögen",
-    "status": "Geschäftsvorgang nur teilweise rekonstruiert"
+    "status": "Geschäftsvorgang nur teilweise rekonstruiert",
+    "available": true
+  },
+  {
+    "id": "fehlinterpretation",
+    "order": 5,
+    "stationId": 3,
+    "label": "PSYCHOLOGISCHES ARCHIV · FEHLERHAFTE MUSTERERKENNUNG",
+    "title": "Die Psychologie der Fehlinterpretation",
+    "subtitle": "Wie aus wenigen Beobachtungen eine vollkommen sichere Wirklichkeit entsteht",
+    "description": "Eine nüchterne Untersuchung darüber, wie Erwartung, Gruppendynamik und ein bemerkenswert selbstbewusstes Urteilsvermögen aus begrenzten Hinweisen eine vollkommen belastbare – und möglicherweise vollkommen falsche – Schlussfolgerung erzeugen.",
+    "audio": "audio/Track5-Die-Psychologie-der-Fehlinterpretation.mp3",
+    "duration": "ca. 01:30",
+    "era": "Ein Abend mit begrenzter Datenlage",
+    "sources": "Mehrere Beobachter mit hoher subjektiver Sicherheit",
+    "status": "Deutung wissenschaftlich umstritten",
+    "available": true
+  },
+  {
+    "id": "placeholder-06",
+    "order": 6,
+    "stationId": 4,
+    "label": "FALLAKTE 06 · NOCH VERSIEGELT",
+    "title": "Track 6 – in Vorbereitung",
+    "subtitle": "Die Akte wird vor Beginn der Expedition freigegeben.",
+    "description": "Platzhalter für eine weitere TT-Fallakte. Titel, Beschreibung und Audiodatei werden ergänzt, sobald die wissenschaftliche Rekonstruktion ausreichend belastbar ist.",
+    "audio": "",
+    "duration": "folgt",
+    "era": "Noch nicht klassifiziert",
+    "sources": "Unter Verschluss",
+    "status": "In Vorbereitung",
+    "available": false
+  },
+  {
+    "id": "placeholder-07",
+    "order": 7,
+    "stationId": 4,
+    "label": "FALLAKTE 07 · NOCH VERSIEGELT",
+    "title": "Track 7 – in Vorbereitung",
+    "subtitle": "Die Akte wird vor Beginn der Expedition freigegeben.",
+    "description": "Platzhalter für eine weitere TT-Fallakte. Titel, Beschreibung und Audiodatei werden ergänzt, sobald die wissenschaftliche Rekonstruktion ausreichend belastbar ist.",
+    "audio": "",
+    "duration": "folgt",
+    "era": "Noch nicht klassifiziert",
+    "sources": "Unter Verschluss",
+    "status": "In Vorbereitung",
+    "available": false
+  },
+  {
+    "id": "placeholder-08",
+    "order": 8,
+    "stationId": 4,
+    "label": "FALLAKTE 08 · NOCH VERSIEGELT",
+    "title": "Track 8 – in Vorbereitung",
+    "subtitle": "Die Akte wird vor Beginn der Expedition freigegeben.",
+    "description": "Platzhalter für eine weitere TT-Fallakte. Titel, Beschreibung und Audiodatei werden ergänzt, sobald die wissenschaftliche Rekonstruktion ausreichend belastbar ist.",
+    "audio": "",
+    "duration": "folgt",
+    "era": "Noch nicht klassifiziert",
+    "sources": "Unter Verschluss",
+    "status": "In Vorbereitung",
+    "available": false
+  },
+  {
+    "id": "placeholder-09",
+    "order": 9,
+    "stationId": 4,
+    "label": "FALLAKTE 09 · NOCH VERSIEGELT",
+    "title": "Track 9 – in Vorbereitung",
+    "subtitle": "Die Akte wird vor Beginn der Expedition freigegeben.",
+    "description": "Platzhalter für eine weitere TT-Fallakte. Titel, Beschreibung und Audiodatei werden ergänzt, sobald die wissenschaftliche Rekonstruktion ausreichend belastbar ist.",
+    "audio": "",
+    "duration": "folgt",
+    "era": "Noch nicht klassifiziert",
+    "sources": "Unter Verschluss",
+    "status": "In Vorbereitung",
+    "available": false
+  },
+  {
+    "id": "placeholder-10",
+    "order": 10,
+    "stationId": 5,
+    "label": "FALLAKTE 10 · NOCH VERSIEGELT",
+    "title": "Track 10 – in Vorbereitung",
+    "subtitle": "Die Akte wird vor Beginn der Expedition freigegeben.",
+    "description": "Platzhalter für eine weitere TT-Fallakte. Titel, Beschreibung und Audiodatei werden ergänzt, sobald die wissenschaftliche Rekonstruktion ausreichend belastbar ist.",
+    "audio": "",
+    "duration": "folgt",
+    "era": "Noch nicht klassifiziert",
+    "sources": "Unter Verschluss",
+    "status": "In Vorbereitung",
+    "available": false
+  },
+  {
+    "id": "placeholder-11",
+    "order": 11,
+    "stationId": 5,
+    "label": "FALLAKTE 11 · NOCH VERSIEGELT",
+    "title": "Track 11 – in Vorbereitung",
+    "subtitle": "Die Akte wird vor Beginn der Expedition freigegeben.",
+    "description": "Platzhalter für eine weitere TT-Fallakte. Titel, Beschreibung und Audiodatei werden ergänzt, sobald die wissenschaftliche Rekonstruktion ausreichend belastbar ist.",
+    "audio": "",
+    "duration": "folgt",
+    "era": "Noch nicht klassifiziert",
+    "sources": "Unter Verschluss",
+    "status": "In Vorbereitung",
+    "available": false
+  },
+  {
+    "id": "placeholder-12",
+    "order": 12,
+    "stationId": 5,
+    "label": "FALLAKTE 12 · NOCH VERSIEGELT",
+    "title": "Track 12 – in Vorbereitung",
+    "subtitle": "Die Akte wird vor Beginn der Expedition freigegeben.",
+    "description": "Platzhalter für eine weitere TT-Fallakte. Titel, Beschreibung und Audiodatei werden ergänzt, sobald die wissenschaftliche Rekonstruktion ausreichend belastbar ist.",
+    "audio": "",
+    "duration": "folgt",
+    "era": "Noch nicht klassifiziert",
+    "sources": "Unter Verschluss",
+    "status": "In Vorbereitung",
+    "available": false
+  },
+  {
+    "id": "junger-loewe",
+    "order": 13,
+    "stationId": 6,
+    "label": "SCHLUSSAKTE · ZOOLOGISCHE SELBSTEINSCHÄTZUNG",
+    "title": "Der junge Löwe",
+    "subtitle": "Eine letzte Feldstudie über Mut, Revierverhalten und realistische Selbsteinschätzung",
+    "description": "Die abschließende Akte der Expedition untersucht ein auffallend selbstbewusstes Jungtier, dessen Auftreten bereits vollständig entwickelt war, während die wissenschaftliche Bewertung seines tatsächlichen Gefahrenpotenzials noch ausstand.",
+    "audio": "audio/Track13-Der-junge-Loewe.mp3",
+    "duration": "ca. 01:30",
+    "era": "Die frühen Jahre des Revierverhaltens",
+    "sources": "Selbstauskunft und mehrere vorsichtige Augenzeugen",
+    "status": "Letzte Akte der Expedition",
+    "available": true
   }
 ]
