@@ -208,3 +208,70 @@ h1 { margin: 0; max-width: 720px; font-family: Georgia, "Times New Roman", serif
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Route poster */
+.route-card {
+  margin: 28px 0 36px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+.route-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px;
+}
+.route-card__title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 5vw, 2.25rem);
+  font-weight: 500;
+}
+.route-card__text {
+  max-width: 610px;
+  margin: 7px 0 0;
+  color: var(--muted);
+}
+.route-card__stamp {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  background: rgba(210, 173, 104, 0.08);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+.route-card__image-link { display: block; border-block: 1px solid var(--line); background: #d8c29d; }
+.route-card__image { display: block; width: 100%; height: auto; }
+.route-card__actions { display: flex; flex-wrap: wrap; gap: 12px; padding: 18px 20px 20px; }
+
+/* Unreleased tracks */
+.track-card.is-placeholder { background: rgba(255, 255, 255, 0.018); }
+.track-card.is-placeholder .track-card__number { color: var(--muted); border-style: dashed; }
+.track-card.is-placeholder .track-card__title,
+.track-card.is-placeholder .track-card__description { color: var(--muted); }
+.placeholder-row { margin-top: 18px; }
+.placeholder-badge {
+  display: inline-flex;
+  padding: 7px 10px;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(210, 173, 104, 0.045);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+}
+.station__play:disabled { opacity: 0.55; cursor: default; }
+
+@media (max-width: 600px) {
+  .route-card__header { flex-direction: column; }
+  .route-card__stamp { align-self: flex-start; }
+  .route-card__actions .button { width: 100%; }
+}
